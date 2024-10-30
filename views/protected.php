@@ -14,11 +14,6 @@ if ($rol === 1) {
 
     <body>
         <div class="container">
-            <div id="demo">
-                <h2>Let AJAX change this text</h2>
-                <button type="button" onclick="loadDoc()">Change Content</button>
-            </div>
-
         </div>
         <form action="logout.php">
             <button>Cerrar sesion</button>
@@ -29,17 +24,9 @@ if ($rol === 1) {
 
     <?php
 } else {
-    echo "No puedes visualizar esta pagina";
+    echo '<script languaje="javascript">alert("No puedes ver esta pagina");</script>';
+    echo '<script languaje="javascript">document.location.href="login.php"</script>';
 }
 ?>
+   <script src="../controllers/Api.js"></script>
 
-<script>
-    function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    document.getElementById("demo").innerHTML = this.responseText;
-    }
-  xhttp.open("GET", "ajax_info.txt", true);
-  xhttp.send();
-}
-</script>
